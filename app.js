@@ -174,6 +174,7 @@ function confirmFiliereChange() {
   if (!FILIERES[draftFiliere] || draftFiliere === state.filiere) return;
   state.filiere = draftFiliere;
   saveState();
+  syncProgress();   // l'enseignant voit tout de suite le nouveau programme
   // Un quiz en cours a été construit pour l'autre programme : on revient à la carte.
   currentQuest = null; currentTierLevel = null;
   render();
@@ -1140,6 +1141,12 @@ function buildProgressArray() {
     if (!m) continue;
     const sc = state.scores[key];
     out.push({ module: m[1], niveau: parseInt(m[2], 10), score: typeof sc === "number" ? sc : 0 });
+  }
+  // Programme choisi par l'élève (PAB ou SASI), transmis comme une ligne spéciale :
+  // module "pk_programme", niveau 1, score 1 = PAB, 2 = SASI. Le tableau de bord
+  // la retire de la progression et l'affiche à côté du totem (aucun changement Supabase).
+  if (state.filiere === "pab" || state.filiere === "sasi") {
+    out.push({ module: "pk_programme", niveau: 1, score: state.filiere === "sasi" ? 2 : 1 });
   }
   return out;
 }
