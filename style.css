@@ -904,3 +904,14 @@ button {
 .tier-pill-theme { display: none; }
 .tier-pill.done { border: 2px solid var(--success); }
 .cta:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Très petits écrans (iPhone SE 1re génération, 320 px) : l'en-tête et les onglets
+   ne doivent jamais faire défiler la page de côté. */
+@media (max-width: 360px) {
+  .topbar { padding-left: 12px; padding-right: 12px; gap: 6px; }
+  .brand { min-width: 0; }
+  .topbar-actions { gap: 4px; flex-shrink: 0; }
+  .lang-btn { padding: 8px 9px; }
+  .tabs { padding-left: 12px; padding-right: 12px; gap: 4px; }
+  .tabs button { min-width: 0; font-size: 12px; padding-left: 4px; padding-right: 4px; }
+}

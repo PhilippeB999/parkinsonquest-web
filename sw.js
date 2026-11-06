@@ -2,9 +2,9 @@
    Au premier chargement, il met en cache tous les fichiers de l'app.
    Ensuite, l'app se lance sans réseau, exactement comme une app native.
    ⚠️ Bumper la version du CACHE à CHAQUE déploiement
-      (parkinsonquest-v1 -> v2 -> v3 ...). */
+      (parkinsonquest-v2 -> v2 -> v3 ...). */
 
-const CACHE = "parkinsonquest-v1";
+const CACHE = "parkinsonquest-v2";
 const ASSETS = [
   "index.html",
   "theme-saisonnier.js",
