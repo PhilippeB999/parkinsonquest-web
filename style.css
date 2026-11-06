@@ -913,5 +913,6 @@ button {
   .topbar-actions { gap: 4px; flex-shrink: 0; }
   .lang-btn { padding: 8px 9px; }
   .tabs { padding-left: 12px; padding-right: 12px; gap: 4px; }
-  .tabs button { min-width: 0; font-size: 12px; padding-left: 4px; padding-right: 4px; }
+  .tabs button { min-width: 0; font-size: 12px; padding-left: 4px; padding-right: 4px;
+    white-space: normal; line-height: 1.2; }   /* « Mon parcours » ne se coupe plus à 320 px */
 }
