@@ -4,7 +4,7 @@
    ⚠️ Bumper la version du CACHE à CHAQUE déploiement
       (parkinsonquest-v3 -> v2 -> v3 ...). */
 
-const CACHE = "parkinsonquest-v4";
+const CACHE = "parkinsonquest-v5";
 const ASSETS = [
   "index.html",
   "theme-saisonnier.js",
